@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitNourish - Iniciar Sesión</title>
+    <!-- Título de la página -->
+
+    <!-- Stylesheets -->
+    <!-- Enlace al archivo CSS personalizado -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <!-- Enlace a la biblioteca Font Awesome para íconos -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Enlace a la biblioteca Bootstrap para estilos responsivos -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <!-- Fondo claro para la página -->
+    <div class="container">
+      <!-- Contenedor principal -->
+      <div class="row justify-content-center mt-5">
+        <!-- Fila centrada verticalmente con margen superior -->
+        <div class="col-md-6">
+          <!-- Columna de tamaño medio -->
+          <div class="card shadow">
+            <!-- Tarjeta con sombra -->
+            <div class="card-body p-5">
+              <!-- Contenido de la tarjeta con padding -->
+              <h2 class="text-center mb-4">Iniciar Sesión</h2>
+              <!-- Título centrado -->
+
+              <!-- Error Message -->
+              {% if error %}
+              <!-- Si hay un error, se muestra un mensaje de alerta -->
+              <div class="alert alert-danger">{{ error }}</div>
+              {% endif %}
+
+              <!-- Login Form -->
+              <form method="POST" action="{{ url_for('login') }}">
+                <!-- Formulario de inicio de sesión que envía datos al endpoint 'login' -->
+                <div class="mb-3">
+                  <!-- Campo para el correo electrónico -->
+                  <label for="email" class="form-label"
+                    >Correo Electrónico</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <!-- Campo para la contraseña -->
+                  <label for="password" class="form-label">Contraseña</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    required
+                  />
+                </div>
+                <div class="d-grid gap-2">
+                  <!-- Botón para enviar el formulario -->
+                  <button type="submit" class="btn btn-primary">
+                    Ingresar
+                  </button>
+                </div>
+              </form>
+
+              <!-- Social Login -->
+              <div class="text-center my-3">
+                <!-- Botón para iniciar sesión con Google -->
+                <p>O inicia sesión con</p>
+                <button id="googleLogin" class="btn btn-outline-danger">
+                  <i class="fab fa-google me-2"></i>Google
+                </button>
+              </div>
+
+              <!-- Register Link -->
+              <div class="text-center mt-3">
+                <!-- Enlace para registrarse -->
+                <p>
+                  ¿No tienes una cuenta?
+                  <a href="{{ url_for('register') }}">Regístrate aquí</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Firebase App y Auth para manejar la autenticación -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <!-- Bootstrap JS para funcionalidades interactivas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Configuración de Firebase -->
+    <script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
+    <!-- Lógica de inicio de sesión -->
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+  </body>
+</html>

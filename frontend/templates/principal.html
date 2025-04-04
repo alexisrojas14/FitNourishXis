@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitNourish - Principal</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">FitNourish</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('principal') }}"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nutrición</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ejercicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mi Progreso</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('login') }}"
+                >Cerrar Sesión</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-5">
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h2>Bienvenido a FitNourish</h2>
+              <p class="lead">
+                Tu plataforma para una vida saludable y equilibrada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card shadow h-100">
+            <div class="card-body">
+              <h3 class="card-title">
+                <i class="fas fa-apple-alt text-success me-2"></i>Nutrición
+              </h3>
+              <p class="card-text">
+                Descubre planes de alimentación personalizados y recetas
+                saludables adaptadas a tus objetivos.
+              </p>
+              <a href="#" class="btn btn-outline-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card shadow h-100">
+            <div class="card-body">
+              <h3 class="card-title">
+                <i class="fas fa-dumbbell text-danger me-2"></i>Ejercicios
+              </h3>
+              <p class="card-text">
+                Rutinas de ejercicios diseñadas por expertos para mejorar tu
+                condición física y bienestar.
+              </p>
+              <a href="#" class="btn btn-outline-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card shadow h-100">
+            <div class="card-body">
+              <h3 class="card-title">
+                <i class="fas fa-chart-line text-info me-2"></i>Seguimiento
+              </h3>
+              <p class="card-text">
+                Monitorea tu progreso y visualiza tus logros con nuestras
+                herramientas de seguimiento.
+              </p>
+              <a href="#" class="btn btn-outline-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>FitNourish</h5>
+            <p>Tu plataforma de bienestar y nutrición</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>&copy; 2025 FitNourish. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

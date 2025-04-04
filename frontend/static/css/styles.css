@@ -1,0 +1,72 @@
+/* Este archivo debe ser guardado en ../frontend/static/css/style.css */
+
+/* Estilos personalizados para FitNourish */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Personalizaciones para el login y registro */
+.card {
+  border-radius: 10px;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+/* Animación suave para hover en cards */
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilos para la barra de navegación */
+.navbar-dark.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+/* Estilos para los iconos */
+.fas {
+  font-size: 1.2rem;
+}
+
+/* Estilos para los encabezados */
+h2,
+h3 {
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+/* Botones outline personalizados */
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Personalizaciones para footer */
+footer {
+  background-color: var(--dark-color) !important;
+}

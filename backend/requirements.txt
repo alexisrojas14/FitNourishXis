@@ -1,0 +1,5 @@
+Flask
+Flask-SQLAlchemy
+pyrebase
+pymysql
+python-dotenv

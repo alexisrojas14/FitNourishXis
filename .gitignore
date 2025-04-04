@@ -1,0 +1,17 @@
+backend/credentials.json
+backend/.env
+frontend/.env
+frontend/static/js/firebase-config.js
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.env
+
+# Entorno de desarrollo
+.vscode/
+
+# Archivos sensibles
+*.key
+*.pem
