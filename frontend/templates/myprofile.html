@@ -42,10 +42,14 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Calculadora de Calorías</a>
+              <a class="nav-link" href="{{url_for('calories.calculator')}}"
+                >Calculadora de Calorías</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Recetas</a>
+              <a class="nav-link" href="{{ url_for('recipes.index') }}"
+                >Recetas</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Reseñas</a>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify, session # Importar Flask y otros módulos necesarios
+from flask import Flask, make_response, render_template, request, redirect, url_for, jsonify, session # Importar Flask y otros módulos necesarios
 import firebase_admin  # Importar Firebase Admin SDK
 from firebase_admin import credentials, auth # Importar Firebase Admin SDK
 import logging
@@ -10,7 +10,8 @@ import os # Importar os para cargar variables de entorno
 from db import get_connection # Importar la función de conexión a la base de datos
 from profile.routes import profile_bp # Importar el blueprint de perfil
 from utils import get_firebase_uid  # Importar la función desde utils.py
-
+from calories.routes import calories_bp # Importar el blueprint de calorías
+from recipes.routes import recipes_bp # Importar el blueprint de recetas
 
 
 
@@ -54,6 +55,8 @@ except Exception as e:
 app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static') # Inicializar Flask
 app.secret_key = os.environ.get('SECRET_KEY', os.urandom(24)) # Clave secreta para la sesión de Flask
 app.register_blueprint(profile_bp,url_prefix="/profile") # Registrar el blueprint de perfil
+app.register_blueprint(calories_bp,url_prefix="/calories") # Registrar el blueprint de calorías
+app.register_blueprint(recipes_bp,url_prefix="/recipes") # Registrar el blueprint de recetas
 
 @app.route('/', methods=['GET', 'POST'])
 def index(): # Ruta principal
@@ -237,13 +240,25 @@ def principal(): # Ruta de la página principal
     # Renderizar la plantilla y pasar el nombre al HTML
     return render_template('principal.html', nombre=nombre)
 
+
 @app.route('/logout', methods=['GET', 'POST'])
-def logout(): # Ruta para cerrar sesión
-    # Eliminar datos de sesión
-    session.clear()
-    
-    logger.info("Usuario desconectado")
-    return redirect(url_for('login',mensaje='Sesion cerrada correctamente')) # Redirigir a la página de inicio de sesión
+def logout():
+    try:
+        # Limpiar la sesión de Flask
+        session.clear()
+        
+        # Limpiar cookies específicas
+        response = redirect(url_for('login', mensaje='Sesión cerrada correctamente'))
+        response.delete_cookie('session')
+        response.delete_cookie('remember_token')
+        
+        logger.info("Usuario desconectado exitosamente")
+        return response
+        
+    except Exception as e:
+        logger.error(f"Error durante el logout: {e}")
+        # Aún en caso de error, intentamos redirigir al login
+        return redirect(url_for('login', mensaje='Error al cerrar sesión'))
 
 
     

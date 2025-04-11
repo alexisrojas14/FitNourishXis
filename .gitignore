@@ -15,3 +15,27 @@ __pycache__/
 # Archivos sensibles
 *.key
 *.pem
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Database
+*.sqlite
+*.db
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Coverage reports
+htmlcov/
+.coverage

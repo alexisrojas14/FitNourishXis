@@ -46,10 +46,10 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Calculadora de Calorías</a>
+              <a class="nav-link" href="{{url_for('calories.calculator')}}">Calculadora de Calorías</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Recetas</a>
+              <a class="nav-link" href="{{ url_for('recipes.index') }}">Recetas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Reseñas</a>
@@ -107,7 +107,7 @@
                 Calcula tus necesidades calóricas diarias según tu estilo de
                 vida y objetivos.
               </p>
-              <a href="" class="btn btn-outline-primary">Calcular</a>
+              <a href="{{url_for('calories.calculator')}}" class="btn btn-outline-primary">Calcular</a>
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@
                 Descubre recetas saludables adaptadas a tus objetivos y
                 preferencias.
               </p>
-              <a href="" class="btn btn-outline-success">Ver recetas</a>
+              <a href="{{ url_for('recipes.index') }}" class="btn btn-outline-success">Ver recetas</a>
             </div>
           </div>
         </div>
