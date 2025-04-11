@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitNourish - Recetas</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">FitNourish</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('principal') }}"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('calculadora') }}"
+                >Calculadora de Calorías</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('recetas') }}"
+                >Recetas</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('resenas') }}"
+                >Reseñas</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('ejercicios') }}"
+                >Ejercicios</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('perfil') }}"
+                ><i class="fas fa-user me-1"></i>Mi Perfil</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('login') }}"
+                ><i class="fas fa-sign-out-alt me-1"></i>Cerrar Sesión</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-5">
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h2><i class="fas fa-utensils text-success me-2"></i>Recetas Saludables</h2>
+              <p class="lead">Descubre deliciosas recetas adaptadas a tus objetivos nutricionales</p>
+              
+              <div class="row mt-4">
+                <div class="col-md-8">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Buscar recetas..." aria-label="Buscar recetas">
+                    <button class="btn btn-outline-success" type="button"><i class="fas fa-search"></i></button>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <select class="form-select">
+                    <option selected>Todas las categorías</option>
+                    <option value="1">Bajo en calorías</option>
+                    <option value="2">Alto en proteínas</option>
+                    <option value="3">Vegetarianas</option>
+                    <option value="4">Desayunos</option>
+                    <option value="5">Postres saludables</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card shadow h-100">
+            <img src="/api/placeholder/400/250" class="card-img-top" alt="Ensalada mediterránea">
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Bajo en calorías</span>
+              <h4 class="card-title">Ensalada Mediterránea</h4>
+              <div class="d-flex justify-content-between mb-2">
+                <span><i class="fas fa-fire-alt text-danger"></i> 320 kcal</span>
+                <span><i class="fas fa-clock text-info"></i> 15 min</span>
+              </div>
+              <p class="card-text">Una refrescante ensalada con ingredientes mediterráneos, rica en antioxidantes y grasas saludables.</p>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-outline-primary">Ver receta</a>
+                <button class="btn btn-outline-danger"><i class="far fa-heart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card shadow h-100">
+            <img src="/api/placeholder/400/250" class="card-img-top" alt="Bowl de proteínas">
+            <div class="card-body">
+              <span class="badge bg-primary mb-2">Alto en proteínas</span>
+              <h4 class="card-title">Bowl de Proteínas</h4>
+              <div class="d-flex justify-content-between mb-2">
+                <span><i class="fas fa-fire-alt text-danger"></i> 450 kcal</span>
+                <span><i class="fas fa-clock text-info"></i> 20 min</span>
+              </div>
+              <p class="card-text">Un bowl completo con pollo a la parrilla, quinoa, vegetales frescos y aderezo de yogur.</p>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-outline-primary">Ver receta</a>
+                <button class="btn btn-outline-danger"><i class="far fa-heart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card shadow h-100">
+            <img src="/api/placeholder/400/250" class="card-img-top" alt="Smoothie energético">
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-2">Pre-entreno</span>
+              <h4 class="card-title">Smoothie Energético</h4>
+              <div class="d-flex justify-content-between mb-2">
+                <span><i class="fas fa-fire-alt text-danger"></i> 280 kcal</span>
+                <span><i class="fas fa-clock text-info"></i> 5 min</span>
+              </div>
+              <p class="card-text">Batido lleno de energía con plátano, espinacas, proteína vegetal y semillas de chía.</p>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-outline-primary">Ver receta</a>
+                <button class="btn btn-outline-danger"><i class="far fa-heart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card shadow h-100">
+            <img src="/api/placeholder/400/250" class="card-img-top" alt="Pasta integral con verduras">
+            <div class="card-body">
+              <span class="badge bg-info text-dark mb-2">Carbohidratos complejos</span>
+              <h4 class="card-title">Pasta Integral con Verduras</h4>
+              <div class="d-flex justify-content-between mb-2">
+                <span><i class="fas fa-fire-alt text-danger"></i> 410 kcal</span>
+                <span><i class="fas fa-clock text-info"></i> 25 min</span>
+              </div>
+              <p class="card-text">Deliciosa pasta integral con salteado de verduras, tomate cherry y aceite de oliva.</p>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-outline-primary">Ver receta</a>
+                <button class="btn btn-outline-danger"><i class="far fa-heart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card shadow h-100">
+            <img src="/api/placeholder/400/250" class="card-img-top" alt="Tortitas de avena">
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Desayuno</span>
+              <h4 class="card-title">Tortitas de Avena y Plátano</h4>
+              <div class="d-flex justify-content-between mb-2">
+                <span><i class="fas fa-fire-alt text-danger"></i> 340 kcal</span>
+                <span><i class="fas fa-clock text-info"></i> 15 min</span>
+              </div>
+              <p class="card-text">Deliciosas tortitas con harina de avena, plátano y un toque de canela, sin azúcar añadido.</p>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-outline-primary">Ver receta</a>
+                <button class="btn btn-outline-danger"><i class="far fa-heart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card shadow h-100">
+            <img src="/api/placeholder/400/250" class="card-img-top" alt="Ensalada de lentejas">
+            <div class="card-body">
+              <span class="badge bg-secondary mb-2">Vegetariano</span>
+              <h4 class="card-title">Ensalada de Lentejas</h4>
+              <div class="d-flex justify-content-between mb-2">
+                <span><i class="fas fa-fire-alt text-danger"></i> 380 kcal</span>
+                <span><i class="fas fa-clock text-info"></i> 30 min</span>
+              </div>
+              <p class="card-text">Nutritiva ensalada de lentejas con verduras asadas, aguacate y aderezo de limón.</p>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-outline-primary">Ver receta</a>
+                <button class="btn btn-outline-danger"><i class="far fa-heart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <nav aria-label="Paginación de recetas" class="mt-4">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Siguiente</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>FitNourish</h5>
+            <p>Tu plataforma de bienestar y nutrición</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>&copy; 2025 FitNourish. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </div

@@ -24,6 +24,10 @@
     />
   </head>
   <body class="bg-light">
+    {% if mensaje %}
+    <div class="alert alert-success">{{ mensaje }}</div>
+    {% endif %}
+
     <!-- Fondo claro para la página -->
     <div class="container">
       <!-- Contenedor principal -->
@@ -102,10 +106,27 @@
       </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>FitNourishXis</h5>
+            <p>Tu plataforma de bienestar y nutrición</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>&copy; 2025 FitNourishXis. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <!-- Scripts -->
     <!-- Firebase App y Auth para manejar la autenticación -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <!-- Firebase App (v8) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
     <!-- Bootstrap JS para funcionalidades interactivas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <!-- Configuración de Firebase -->

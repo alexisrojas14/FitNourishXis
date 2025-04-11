@@ -9,14 +9,31 @@
   --light-color: #ecf0f1;
 }
 
+html,
 body {
+  height: 100%; /* Asegura que el HTML y el body ocupen toda la altura de la ventana */
+  margin: 0; /* Elimina márgenes predeterminados */
+}
+
+body {
+  display: flex; /* Configura el body como un contenedor flexible */
+  flex-direction: column; /* Asegura que los elementos hijos se apilen verticalmente */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
 }
 
 /* Personalizaciones para el login y registro */
 .card {
   border-radius: 10px;
   border: none;
+  transition: transform 0.3s ease; /* Animación suave para hover en cards */
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .btn-primary {
@@ -27,15 +44,6 @@ body {
 .btn-primary:hover {
   background-color: #2980b9;
   border-color: #2980b9;
-}
-
-/* Animación suave para hover en cards */
-.card {
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
 }
 
 /* Estilos para la barra de navegación */
@@ -68,5 +76,141 @@ h3 {
 
 /* Personalizaciones para footer */
 footer {
-  background-color: var(--dark-color) !important;
+  background-color: var(--dark-color);
+  color: white;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  margin-top: auto; /* Empuja el footer al final del contenedor flexible */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* Estilos para alertas de logout */
+.alert-logout {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeOut 3s forwards;
+}
+
+/* ...existing code... */
+
+.feature-card {
+  transition: transform 0.3s ease;
+  border: none;
+  border-radius: 15px;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.card-title {
+  color: var(--dark-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+}
+
+/* Estilos para la página de login */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-main {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+/* Estilos para el formulario */
+.form-floating > label {
+  color: #6c757d;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+/* Estilos para los botones */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-outline-danger {
+  transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+  transform: translateY(-2px);
+}
+
+/* Estilos para la tarjeta */
+.card {
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  border-bottom: 0;
+  border-radius: calc(0.5rem - 1px) calc(0.5rem - 1px) 0 0 !important;
+}
+
+/* Estilos para el footer */
+footer {
+  margin-top: auto;
+}
+
+/* Estilos para alertas */
+.alert {
+  border: none;
+  border-radius: 10px;
+}
+
+.alert-dismissible .btn-close {
+  padding: 1.25rem;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
